@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    private int score = 0;
+    public Text scoreText;
 
     private void Start()
     {
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
             animator.SetInteger("State", 2);
         }
 
+        scoreText.text = string.Format("Score: {0}", score);
     }
 
     private void Jump()
@@ -89,6 +93,11 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
 
+    }
+
+    public void AddCoin(int count = 1)
+    {
+        score += count;
     }
 
 
