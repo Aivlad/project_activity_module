@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigitbody2d;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private GameObject bottom = null;
 
     private int score = 0;
     public Text scoreText;
@@ -22,10 +23,15 @@ public class Player : MonoBehaviour
         rigitbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        
+        // получаем дочерний объект 
+        bottom = gameObject.transform.Find("Bottom").gameObject;
     }
 
     private void FixedUpdate()
     {
+        isGrounded = bottom.GetComponent<PlayerBottom>().isGrounded;
+
         // если нажали клавишу Space
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
@@ -72,27 +78,6 @@ public class Player : MonoBehaviour
     {
         // делаем прыжок 
         rigitbody2d.AddForce(transform.up * jumpForece, ForceMode2D.Impulse);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // если входим в область земли
-        if (collision.gameObject.tag == "Ground")
-        {
-            // ставим флаг: объект на земле
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // если выходим из области земли
-        if (collision.gameObject.tag == "Ground")
-        {
-            // ставим флаг: объект покинул земле
-            isGrounded = false;
-        }
-
     }
 
     public void AddCoin(int count = 1)
