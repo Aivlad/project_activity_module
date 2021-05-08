@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -84,6 +85,14 @@ public class Player : MonoBehaviour
         scoreText.text = string.Format("Score: {0}", score);
 
         CallBonus();
+    }
+
+    private void Update() 
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     private void CallBonus()
