@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public Transform startLevel;
     public float speed;
     public float jumpForece;
 
@@ -28,6 +29,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        startLevel = GameObject.Find("Start").transform;
+        transform.position = startLevel.position;
+
         // заносим данные с объекта в переменные
         rigitbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
