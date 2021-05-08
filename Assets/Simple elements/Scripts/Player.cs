@@ -17,6 +17,14 @@ public class Player : MonoBehaviour
     private int score = 0;
     public Text scoreText;
 
+    public float timerSpeed;
+    public float timerSpeedMax;
+    public float speedBonus;
+    public float startSpeed;
+
+    public float timerScale;
+    public float timerScaleMax;
+
     private void Start()
     {
         // заносим данные с объекта в переменные
@@ -26,6 +34,8 @@ public class Player : MonoBehaviour
         
         // получаем дочерний объект 
         bottom = gameObject.transform.Find("Bottom").gameObject;
+
+        startSpeed = speed;
     }
 
     private void FixedUpdate()
@@ -72,6 +82,31 @@ public class Player : MonoBehaviour
         }
 
         scoreText.text = string.Format("Score: {0}", score);
+
+        CallBonus();
+    }
+
+    private void CallBonus()
+    {
+        if (timerSpeed > 0)
+        {
+            speed = speedBonus;
+            timerSpeed--;
+        }
+        else
+        {
+            speed = startSpeed;
+        }
+
+        if (timerScale > 0)
+        {
+            transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            timerScale--;
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private void Jump()
@@ -85,5 +120,13 @@ public class Player : MonoBehaviour
         score += count;
     }
 
+    public void SpeedBonus()
+    {
+        timerSpeed = timerSpeedMax;
+    }
 
+    public void AddScaleBonus()
+    {
+        timerScale = timerScaleMax;
+    }
 }

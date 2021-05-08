@@ -40,6 +40,8 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.GetComponent<Player>().SpeedBonus();
+
             other.GetComponent<Player>().AddCoin(weight);
             // Debug.Log("Противник убит");
             Destroy(gameObject);
