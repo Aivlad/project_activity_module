@@ -124,6 +124,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Begin: {fileID: 5955157735342590740}
   End: {fileID: 2382491962671491980}
+  BlockMaterials:
+  - {fileID: 2100000, guid: 2c246f479497414439a39510f338343b, type: 2}
+  - {fileID: 2100000, guid: 5444c5948d4bfd449ad8660a269721dc, type: 2}
+  - {fileID: 2100000, guid: bff8855376eb1bb44a666f00f5349c60, type: 2}
+  ChanceFromDistance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0022447486
+      outSlope: 0.0022447486
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 62.28872
+      value: 0.13982251
+      inSlope: 0.010023866
+      outSlope: 0.010023866
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 97.85877
+      value: 0.77307564
+      inSlope: 0.0110775465
+      outSlope: 0.0110775465
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 150
+      value: 1
+      inSlope: 0.00435211
+      outSlope: 0.00435211
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3916841185328764600
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +346,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Begin: {fileID: 5955157735342590740}
   End: {fileID: 2382491962671491980}
+  BlockMaterials: []
+  ChanceFromDistance:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1647226913177774557
 PrefabInstance:
   m_ObjectHideFlags: 0
