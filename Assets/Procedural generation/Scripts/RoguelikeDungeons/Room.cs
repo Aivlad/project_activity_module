@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject DoorU;
+    public GameObject DoorL;
+    public GameObject DoorR;
+    public GameObject DoorD;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject Center;
+
+    public void RotateRandomly()
     {
-        
+        int count = Random.Range(0, 4);
+        for (int i = 0; i < count; i++)
+        {
+            // transform.Rotate(0, 90, 0);
+            transform.RotateAround(Center.transform.position, new Vector3(0, 1, 0), 90);
+
+            GameObject doorTmp = DoorL;
+            DoorL = DoorD;
+            DoorD = DoorR;
+            DoorR = DoorU;
+            DoorU = doorTmp;
+        }
     }
 }
