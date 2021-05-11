@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab876f4240ec4a64d92cae4a8a1fb011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellPrefab: {fileID: 5255409623958451581, guid: 2c9329831c6d1fe42b84bed34ee3797c, type: 3}
 --- !u!1 &1171510753
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10.298588
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -242,8 +243,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171510753}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.96121, y: 7.039307, z: -28.963186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -262,11 +263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5261538007178056409, guid: 77f40935a11f3f0438d6b0bc6d267ea6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.049117
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 5261538007178056409, guid: 77f40935a11f3f0438d6b0bc6d267ea6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3231187
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5261538007178056409, guid: 77f40935a11f3f0438d6b0bc6d267ea6, type: 3}
       propertyPath: m_LocalPosition.z
